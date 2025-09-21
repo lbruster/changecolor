@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+
+/*** Dark Theme ***/
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --link-color: #bb86fc;
+  --button-bg-color: #1f1f1f;
+  --button-text-color: #ffffff;
+  --button-border-color: #bb86fc;
+}
+body.dark-theme {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+body.dark-theme a {
+  color: var(--link-color);
+}
