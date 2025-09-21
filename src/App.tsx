@@ -21,6 +21,7 @@ function App() {
     setBG(randomIndex);
     document.body.style.backgroundColor = colors[randomIndex];
   };
+
   /* const blackExist =() =>{
     const black = colors.filter{( colors ) => colors === 'black'}.length > 0
     return black
@@ -42,16 +43,13 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+        <p>Here is the default counter</p>
         <button onClick={incrementar}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-        <button onClick={changeColor}>ChangeColor</button>
-        <button onClick={changeBG}>ChangeBGColor</button>
+        <p>Here use the buttons to change the logo background colors</p>
+        <button onClick={changeColor}>Change Just Logo Color</button>
+        <p>Here use the buttons to change the logo background colors</p>
+        <button onClick={changeBG}>Change BG Color</button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
