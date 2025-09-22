@@ -1,9 +1,14 @@
 import * as React from "react";
-/* import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem"; */
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
-export default function BasicMenu() {
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+
+export default function DefaultMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -15,6 +20,10 @@ export default function BasicMenu() {
 
   return (
     <div>
+      <nav>
+        <a href="#">Ejercicio 1 </a> | <a href="#">Ejercicio 2 </a> |{" "}
+        <a href="#">Ejercicio 3</a> | <a href="#">Ejercicio 4</a>
+      </nav>
       <Button
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
