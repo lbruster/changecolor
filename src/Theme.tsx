@@ -11,6 +11,7 @@ function SelectTheme() {
   const [isActive, setIsActive] = useState(false);
 
   const toggleActive = () => {
+    document.body.style.backgroundColor = isActive ? "white" : "black";
     document.body.classList.add("dark-theme");
     if (isActive) {
       document.body.classList.remove("dark-theme");
@@ -23,7 +24,7 @@ function SelectTheme() {
       className={`base-button ${isActive ? "active-button" : ""}`}
       onClick={toggleActive}
     >
-      Dark Theme
+      {`${isActive ? "Light Theme" : "Dark Theme"}`}
     </button>
   );
 }

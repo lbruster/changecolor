@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App.tsx";
 import SelectTheme from "./Theme.tsx";
 import DefaultMenu from "./menu.tsx";
+import { BrowserRouter as Router } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <DefaultMenu />
-    <App />
-    <SelectTheme />
+    <Router>
+      <DefaultMenu />
+      <App />
+      <SelectTheme />
+    </Router>
   </StrictMode>
 );
