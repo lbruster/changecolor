@@ -1,12 +1,11 @@
 import * as React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-
+import { Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+
+import "bootstrap/dist/css/bootstrap.css";
 
 export default function DefaultMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -19,35 +18,55 @@ export default function DefaultMenu() {
   };
 
   return (
-    <div>
-      <nav>
-        <a href="#">Ejercicio 1 </a> | <a href="#">Ejercicio 2 </a> |{" "}
-        <a href="#">Ejercicio 3</a> | <a href="#">Ejercicio 4</a>
-      </nav>
-      <Button
-        id="basic-button"
-        aria-controls={open ? "basic-menu" : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? "true" : undefined}
-        onClick={handleClick}
-      >
-        Dashboard
-      </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        slotProps={{
-          list: {
-            "aria-labelledby": "basic-button",
-          },
-        }}
-      >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
-    </div>
+    <BrowserRouter>
+      <>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+        <div>
+          <nav>
+            <a href="#">Ejercicio 1 </a> | <a href="#">Ejercicio 2 </a> |{" "}
+            <a href="#">Ejercicio 3</a> | <a href="#">Ejercicio 4</a>
+          </nav>
+          <Button
+            id="basic-button"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+          >
+            Dashboard
+          </Button>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            slotProps={{
+              list: {
+                "aria-labelledby": "basic-button",
+              },
+            }}
+          >
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <MenuItem onClick={handleClose}>Logout</MenuItem>
+          </Menu>
+        </div>
+      </>
+    </BrowserRouter>
   );
 }

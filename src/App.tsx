@@ -3,54 +3,22 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-const colors = ["red", "blue", "green", "yellow", "black", "white"];
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/home";
+import About from "./components/about";
+import Contact from "./components/contact";
 
 function App() {
-  const [color, setColor] = useState("white");
-  const [count, setCount] = useState(0);
-  const [bgcolor, setBG] = useState(0);
-  const origFontStyle = document.body.style.backgroundColor;
-
-  const changeColor = () => {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    setColor(randomColor);
-  };
-
-  const changeBG = () => {
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    setBG(randomIndex);
-    document.body.style.backgroundColor = colors[randomIndex];
-  };
-
-  /* const blackExist =() =>{
-    const black = colors.filter{( colors ) => colors === 'black'}.length > 0
-    return black
-  } */
-
-  const incrementar = () => {
-    setCount(count + 1);
-  };
-
   return (
-    <>
-      <div style={{ backgroundColor: color }}>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <p>Here is the default counter</p>
-        <button onClick={incrementar}>count is {count}</button>
-        <p>Here use the buttons to change the logo background colors</p>
-        <button onClick={changeColor}>Change Just Logo Color</button>
-        <p>Here use the buttons to change the logo background colors</p>
-        <button onClick={changeBG}>Change BG Color</button>
-      </div>
-    </>
+    </Router>
   );
 }
 
