@@ -32,24 +32,19 @@ export default function DefaultMenu() {
               <Link to="/contact">Contact</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Button
+                id="basic-button"
+                aria-controls={open ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+              >
+                Projects
+              </Button>
             </li>
           </ul>
         </nav>
         <div>
-          <nav>
-            <a href="#">Ejercicio 1 </a> | <a href="#">Ejercicio 2 </a> |{" "}
-            <a href="#">Ejercicio 3</a> | <a href="#">Ejercicio 4</a>
-          </nav>
-          <Button
-            id="basic-button"
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
-            Dashboard
-          </Button>
           <Menu
             id="basic-menu"
             anchorEl={anchorEl}
@@ -61,9 +56,15 @@ export default function DefaultMenu() {
               },
             }}
           >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
+            <MenuItem onClick={handleClose}>Project 1</MenuItem>
+            <MenuItem onClick={handleClose}>Project 2</MenuItem>
+            <MenuItem onClick={handleClose}>Project 3</MenuItem>
+            <MenuItem onClick={handleClose}>Project 4</MenuItem>
+            <MenuItem onClick={handleClose}>Project 5</MenuItem>
+            <MenuItem onClick={handleClose}>Project 6</MenuItem>
+            <MenuItem onClick={handleClose}>Project 7</MenuItem>
+            <MenuItem onClick={handleClose}>Project 8</MenuItem>
+            <MenuItem onClick={handleClose}>Project 9</MenuItem>
           </Menu>
         </div>
       </>
