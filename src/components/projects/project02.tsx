@@ -17,16 +17,18 @@ const Project02 = () => {
   realizados.    
       */
     <>
-      <div>
-        <h1>Project 02</h1>
-        <p>Learn more about us here.</p>
-      </div>
-      <h1>Contador de Clicks</h1>
-      <h2 className="conteo-clicks">{count}</h2>
-      <div className="card">
-        <p>Here is the default counter</p>
-        <button onClick={incrementar}>Contar Clicks {count}</button>
-      </div>
+      <section className="projects">
+        <div>
+          <h1>Project 02</h1>
+          <p>Learn more about us here.</p>
+        </div>
+        <h1>Contador de Clicks</h1>
+        <h2 className="conteo-clicks">{count}</h2>
+        <div className="card">
+          <p>Here is the default counter</p>
+          <button onClick={incrementar}>Contar Clicks {count}</button>
+        </div>
+      </section>
     </>
   );
 };

@@ -20,12 +20,16 @@ function SelectTheme() {
   };
 
   return (
-    <button
-      className={`base-button ${isActive ? "active-button" : ""}`}
-      onClick={toggleActive}
-    >
-      {`${isActive ? "Light Theme" : "Dark Theme"}`}
-    </button>
+    <>
+      <p></p>
+      <p></p>
+      <button
+        className={`base-button ${isActive ? "active-button" : ""}`}
+        onClick={toggleActive}
+      >
+        {`${isActive ? "Light Theme" : "Dark Theme"}`}
+      </button>
+    </>
   );
 }
 

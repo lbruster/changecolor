@@ -2,10 +2,14 @@ import React from "react";
 
 const About = () => {
   return (
-    <div>
-      <h1>Project 07</h1>
-      <p>Learn more about us here.</p>
-    </div>
+    <>
+      <section className="projects">
+        <div>
+          <h1>Project 07</h1>
+          <p>Learn more about us here.</p>
+        </div>
+      </section>
+    </>
     /*    
     7. Generador de Contraseñas Aleatorias
 Objetivo del ejercicio: Practicar generación de cadenas aleatorias y uso de formularios.

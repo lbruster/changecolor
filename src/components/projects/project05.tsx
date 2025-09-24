@@ -2,10 +2,14 @@ import React from "react";
 
 const About = () => {
   return (
-    <div>
-      <h1>Project 05</h1>
-      <p>Learn more about us here.</p>
-    </div>
+    <>
+      <section className="projects">
+        <div>
+          <h1>Project 05</h1>
+          <p>Learn more about us here.</p>
+        </div>
+      </section>
+    </>
     /*
     1. Cambiador de Color de Fondo
 Objetivo del ejercicio: Practicar eventos en JavaScript y manipulación de estilos del DOM.

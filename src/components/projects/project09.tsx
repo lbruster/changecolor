@@ -2,10 +2,14 @@ import React from "react";
 
 const About = () => {
   return (
-    <div>
-      <h1>Project 09</h1>
-      <p>Learn more about us here.</p>
-    </div>
+    <>
+      <section className="projects">
+        <div>
+          <h1>Project 09</h1>
+          <p>Learn more about us here.</p>
+        </div>
+      </section>
+    </>
     /*
 9. Lista de Tareas con LocalStorage
 Objetivo del ejercicio: Practicar persistencia de datos con localStorage.

@@ -2,10 +2,15 @@ import React from "react";
 
 const About = () => {
   return (
-    <div>
-      <h1>Project 08</h1>
-      <p>Learn more about us here.</p>
-    </div>
+    <>
+      <section className="projects">
+        <div>
+          <h1>Project 08</h1>
+          <p>Learn more about us here.</p>
+        </div>
+      </section>
+    </>
+
     /*
 8. Contador de Palabras y Caracteres
 Objetivo del ejercicio: Practicar eventos en tiempo real y manipulación avanzada del DOM.

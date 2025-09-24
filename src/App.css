@@ -5,6 +5,11 @@
   padding: 2rem;
   text-align: center;
 }
+div#root {
+  top: 50px;
+  position: absolute;
+  left: 25%;
+}
 
 .logo {
   height: 6em;
@@ -84,7 +89,17 @@ section button {
   border-radius: 20px;
   height: 50px;
 }
-
+h2.conteo-clicks {
+  font-size: 10rem;
+}
+app button {
+  background: #000;
+  width: 200px;
+  margin: 0 auto;
+  box-shadow: 3px 5px 10px #000;
+  border-radius: 20px;
+  height: 50px;
+}
 /*** Dark Theme ***/
 .base-button {
   background: #000;
