@@ -20,7 +20,7 @@ const Project02 = () => {
       <section className="projects">
         <div>
           <h1>Project 02</h1>
-          <p>Learn more about us here.</p>
+          <p>Realiza un conteo de los clicks en un boton</p>
         </div>
         <h1>Contador de Clicks</h1>
         <h2 className="conteo-clicks">{count}</h2>
