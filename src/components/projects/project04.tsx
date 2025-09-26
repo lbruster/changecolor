@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const About = () => {
+const project04 = () => {
   const [item, setItem] = useState([] as string[]);
   const predefinedList = ["Perro", "Gato", "Pez", "Loro", "Hamster", "Conejo"];
 
@@ -64,4 +64,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default project04;
