@@ -18,7 +18,7 @@ const About = () => {
       <section className="projects">
         <div>
           <h1>Project 05</h1>
-          <p>Learn more about us here.</p>
+          <p>Calculator of 2 items.</p>
         </div>
       </section>
     </>

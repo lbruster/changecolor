@@ -11,10 +11,10 @@ import React, { useState } from "react";
 */
 const Project03 = () => {
   // State to hold our list of todos
-  const [todos, setTodos] = useState(["eat", "sleep", "code"]);
+  const [todos, setTodos] = useState(["Demo task Example"]);
   const [newTodo, setNewTodo] = useState("");
 
-  function handleInputChange(event) {
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     setNewTodo(event.target.value);
   }
   function addTodo() {
@@ -23,11 +23,11 @@ const Project03 = () => {
       setNewTodo("");
     }
   }
-  function deleteTodo(index) {
+  function deleteTodo(index: number) {
     const updatedTodos = todos.filter((_, i) => i !== index);
     setTodos(updatedTodos);
   }
-  function moveTodoUp(index) {
+  function moveTodoUp(index: number) {
     if (index > 0) {
       const updatedTodos = [...todos];
       [updatedTodos[index], updatedTodos[index - 1]] = [
@@ -37,7 +37,7 @@ const Project03 = () => {
       setTodos(updatedTodos);
     }
   }
-  function moveTodoDown(index) {
+  function moveTodoDown(index: number) {
     if (index < todos.length - 1) {
       const updatedTodos = [...todos];
       [updatedTodos[index], updatedTodos[index + 1]] = [
@@ -48,23 +48,14 @@ const Project03 = () => {
     }
   }
 
-  // Function to toggle the completion status of a todo
-  /* const handleToggleComplete = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { todo, isCompleted: !todo.isCompleted } : todo
-      )
-    );
-  }; */
-
   return (
     <>
       <section className="projects">
         <div>
           <h1>Project 03</h1>
-          <p>Learn more about us here.</p>
+          <p>A simple todo list</p>
         </div>
-        <div>
+        <div className="add-todo">
           <input
             type="text"
             value={newTodo}
@@ -72,12 +63,12 @@ const Project03 = () => {
             placeholder="Add a new task..."
           />
           <button className="add-button" onClick={addTodo}>
-            Agregar
+            AGREGAR
           </button>
         </div>
         {/* List of todos */}
-        <ul>
-          <li>Lista</li>
+        <h2>Lista</h2>
+        <ul className="todo-list">
           {todos.map((task, index) => (
             <li
               key={index}
@@ -85,12 +76,7 @@ const Project03 = () => {
             textDecoration: todo.isCompleted ? "line-through" : "none",
             }} */
             >
-              <span
-                className="text"
-                //onClick={() => handleToggleComplete(todo.id)}
-              >
-                {task}
-              </span>
+              <span className="text">{task}</span>
               <button
                 className="delete-button"
                 onClick={() => deleteTodo(index)}
@@ -101,13 +87,13 @@ const Project03 = () => {
                 className="moveup-button"
                 onClick={() => moveTodoUp(index)}
               >
-                UP
+                🔺
               </button>
               <button
                 className="movedown-button"
                 onClick={() => moveTodoDown(index)}
               >
-                Down
+                🔻
               </button>
             </li>
           ))}
