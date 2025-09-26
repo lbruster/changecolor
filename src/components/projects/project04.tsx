@@ -18,6 +18,8 @@ const About = () => {
     const searchTerm = (item || []).toString().toLowerCase();
     if (searchTerm !== "") {
       console.log(item);
+      const testinginput = document.querySelector(".liveInput");
+      console.log(testinginput);
     }
   }
   return (
@@ -41,6 +43,7 @@ const About = () => {
         </div>
         <div className="filter-search">
           <input
+            className="liveInput"
             type="text"
             //value={searchIteam}
             onChange={handleSearch}
