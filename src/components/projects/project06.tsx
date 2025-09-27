@@ -1,6 +1,6 @@
 import React from "react";
 
-const About = () => {
+const project06 = () => {
   return (
     <>
       <section className="projects">
@@ -24,4 +24,4 @@ y “Reiniciar”.
   );
 };
 
-export default About;
+export default project06;
