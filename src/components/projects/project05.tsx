@@ -52,9 +52,8 @@ const Project05 = () => {
   // ... (functions for handling number input, operations, etc.)
   function result() {}
 
-  /*  const [input, setInput] = useState(""); */
-
-  /* const handleButtonClick = (value) => {
+  const [input, setInput] = useState("");
+  const handleButtonClick = (value: string) => {
     if (value === "=") {
       // Evaluate the expression
       try {
@@ -65,7 +64,7 @@ const Project05 = () => {
     } else {
       setInput(input + value);
     }
-  }; */
+  };
   return (
     <>
       <section className="projects">
