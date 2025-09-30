@@ -51,6 +51,8 @@ const Project05 = () => {
         return a * b;
       case "/":
         return b === 0 ? NaN : a / b;
+      case "%":
+        return b === 0 ? NaN : a % b;
       default:
         return b;
     }
@@ -109,6 +111,10 @@ const Project05 = () => {
       clearAll();
       return;
     }
+    if (value === "%") {
+      clearAll();
+      return;
+    }
     // operator
     handleOperator(value);
   };
@@ -122,7 +128,6 @@ const Project05 = () => {
         </div>
       </section>
       <section className="projects-calc">
-        {/* <input type="text" value={value} /> */}
         <input type="text" value={displayValue} readOnly />
 
         <div className="divrow">
@@ -154,8 +159,14 @@ const Project05 = () => {
               </button>
             ))}
           </div>
-          <div className="divrsp">
-            <button onClick={() => handleButtonClick("C")}>C</button>
+          <div className="divrsp calc2btns">
+            {["C", "%"].map((btn) => (
+              <button key={btn} onClick={() => handleButtonClick(btn)}>
+                {btn}
+              </button>
+            ))}
+            {/* <button onClick={() => handleButtonClick("C")}>C</button>
+            <button onClick={() => handleButtonClick("%")}>%</button> */}
           </div>
         </div>
         <div></div>
