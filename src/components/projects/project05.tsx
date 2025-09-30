@@ -13,58 +13,106 @@ Crea una página con dos campos de entrada de números y cuatro botones: "Sumar"
 ● Asegúrate de validar la entrada para evitar errores (por ejemplo, división por cero).
 
 */
-/* function ButtonPanel({ onButtonClick }) {
-  const buttons = [
-    "7",
-    "8",
-    "9",
-    "/",
-    "4",
-    "5",
-    "6",
-    "*",
-    "1",
-    "2",
-    "3",
-    "-",
-    "0",
-    ".",
-    "=",
-    "+",
-  ];
 
-  return (
-    <div className="button-panel">
-      {buttons.map((btn) => (
-        <button key={btn} onClick={() => onButtonClick(btn)}>
-          {btn}
-        </button>
-      ))}
-    </div>
-  );
-} */
 const Project05 = () => {
-  const [displayValue, setDisplayValue] = useState("0");
-  const [firstOperand, setFirstOperand] = useState(null);
-  const [operator, setOperator] = useState(null);
-  const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false);
+  const [displayValue, setDisplayValue] = useState<string>("0");
+  const [firstOperand, setFirstOperand] = useState<number | null>(null);
+  const [operator, setOperator] = useState<string | null>(null);
+  const [waitingForSecondOperand, setWaitingForSecondOperand] =
+    useState<boolean>(false);
 
-  // ... (functions for handling number input, operations, etc.)
-  function result() {}
-
-  const [input, setInput] = useState("");
-  const handleButtonClick = (value: string) => {
-    if (value === "=") {
-      // Evaluate the expression
-      try {
-        setInput(eval(input).toString());
-      } catch (error) {
-        setInput("Error");
-      }
+  const inputDigit = (digit: string) => {
+    if (waitingForSecondOperand) {
+      setDisplayValue(digit);
+      setWaitingForSecondOperand(false);
     } else {
-      setInput(input + value);
+      setDisplayValue((prev) => (prev === "0" ? digit : prev + digit));
     }
   };
+
+  const inputDecimal = () => {
+    if (waitingForSecondOperand) {
+      setDisplayValue("0.");
+      setWaitingForSecondOperand(false);
+      return;
+    }
+    if (!displayValue.includes(".")) {
+      setDisplayValue((prev) => prev + ".");
+    }
+  };
+
+  const performCalculation = (op: string, a: number, b: number) => {
+    switch (op) {
+      case "+":
+        return a + b;
+      case "-":
+        return a - b;
+      case "*":
+        return a * b;
+      case "/":
+        return b === 0 ? NaN : a / b;
+      default:
+        return b;
+    }
+  };
+
+  const handleOperator = (nextOperator: string) => {
+    const inputValue = parseFloat(displayValue);
+
+    if (firstOperand === null) {
+      setFirstOperand(inputValue);
+    } else if (operator) {
+      const result = performCalculation(operator, firstOperand, inputValue);
+      setDisplayValue(String(result));
+      setFirstOperand(result);
+    }
+
+    setWaitingForSecondOperand(true);
+    setOperator(nextOperator);
+  };
+
+  const handleEquals = () => {
+    if (operator && firstOperand !== null) {
+      const result = performCalculation(
+        operator,
+        firstOperand,
+        parseFloat(displayValue)
+      );
+      setDisplayValue(String(result));
+      setFirstOperand(null);
+      setOperator(null);
+      setWaitingForSecondOperand(false);
+    }
+  };
+
+  const clearAll = () => {
+    setDisplayValue("0");
+    setFirstOperand(null);
+    setOperator(null);
+    setWaitingForSecondOperand(false);
+  };
+
+  const handleButtonClick = (value: string) => {
+    if (/^[0-9]$/.test(value)) {
+      inputDigit(value);
+      return;
+    }
+    if (value === ".") {
+      inputDecimal();
+      return;
+    }
+    if (value === "=") {
+      handleEquals();
+      return;
+    }
+    if (value === "C") {
+      clearAll();
+      return;
+    }
+    // operator
+    handleOperator(value);
+  };
+
   return (
     <>
       <section className="projects">
@@ -74,74 +122,40 @@ const Project05 = () => {
         </div>
       </section>
       <section className="projects-calc">
-        <label
-          className="livecalc-field"
-          /* onChange={handleSearch} */
-        >
-          {displayValue}
-        </label>
+        {/* <input type="text" value={value} /> */}
+        <input type="text" value={displayValue} readOnly />
+
         <div className="divrow">
           <div className="divrsp">
-            <button>7</button>
+            {["7", "8", "9", "/"].map((btn) => (
+              <button key={btn} onClick={() => handleButtonClick(btn)}>
+                {btn}
+              </button>
+            ))}
           </div>
           <div className="divrsp">
-            <button>8</button>
+            {["4", "5", "6", "*"].map((btn) => (
+              <button key={btn} onClick={() => handleButtonClick(btn)}>
+                {btn}
+              </button>
+            ))}
           </div>
           <div className="divrsp">
-            <button>9</button>
+            {["1", "2", "3", "-"].map((btn) => (
+              <button key={btn} onClick={() => handleButtonClick(btn)}>
+                {btn}
+              </button>
+            ))}
           </div>
-          <div></div>
-          <div></div>
-        </div>
-        <div className="divrow">
           <div className="divrsp">
-            <button>4</button>
+            {["0", ".", "=", "+"].map((btn) => (
+              <button key={btn} onClick={() => handleButtonClick(btn)}>
+                {btn}
+              </button>
+            ))}
           </div>
-          <div>
-            <button>5</button>
-          </div>
-          <div>
-            <button>6</button>
-          </div>
-          <div>
-            <button>X</button>
-          </div>
-          <div>
-            <button>/</button>
-          </div>
-        </div>
-        <div className="divrow">
-          <div>
-            <button>1</button>
-          </div>
-          <div>
-            <button>2</button>
-          </div>
-          <div>
-            <button>3</button>
-          </div>
-          <div>
-            <button>-</button>
-          </div>
-          <div></div>
-        </div>
-        <div className="divrow">
-          <div>
-            <button>c</button>
-          </div>
-          <div>
-            <button>0</button>
-          </div>
-          <div>
-            <button>.</button>
-          </div>
-          <div>
-            <button>+</button>
-          </div>
-          <div>
-            <button className="equal" onClick={result}>
-              =
-            </button>
+          <div className="divrsp">
+            <button onClick={() => handleButtonClick("C")}>C</button>
           </div>
         </div>
         <div></div>
