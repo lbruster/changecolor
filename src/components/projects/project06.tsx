@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const project06 = () => {
   const [isRunning, setIsRunning] = useState(false);
@@ -52,7 +52,7 @@ const project06 = () => {
       <section className="projects">
         <div>
           <h1>Project 06</h1>
-          <p>Learn more about us here.</p>
+          <p>Temporizador con Inicio, Pausa y Reinicio</p>
         </div>
       </section>
       <div className="stopwatch-wrapper">
