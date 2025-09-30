@@ -13,15 +13,14 @@ línea.
 
 const project08 = () => {
   const [item, setItem] = useState([] as string[]);
-  const predefinedList = ["Perro", "Gato", "Pez", "Loro", "Hamster", "Conejo"];
+  const predefinedList = [""];
 
-  function handleSearch(event: React.ChangeEvent<HTMLInputElement>) {
+  function handleType(event: React.ChangeEvent<HTMLInputElement>) {
     const searchTerm = event.target.value.toLowerCase();
     if (searchTerm !== "") {
-      const filteredItems = predefinedList.filter((item) =>
-        item.toLowerCase().includes(searchTerm)
-      );
-      setItem(filteredItems);
+      const filteredItems = searchTerm.length;
+      /* setItem(filteredItems.toString); */
+      return filteredItems;
     }
   }
 
@@ -46,8 +45,8 @@ const project08 = () => {
           className="liveInput"
           type="text"
           //value={searchIteam}
-          onChange={handleSearch}
-          placeholder="Add a new task..."
+          onChange={handleType}
+          placeholder="Type here..."
         />
         <button className="add-button" onClick={searchItem}>
           Search

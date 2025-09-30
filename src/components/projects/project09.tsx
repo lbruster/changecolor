@@ -6,7 +6,7 @@ const About = () => {
       <section className="projects">
         <div>
           <h1>Project 09</h1>
-          <p>Learn more about us here.</p>
+          <p>Lista de Tareas con LocalStorage</p>
         </div>
       </section>
     </>
