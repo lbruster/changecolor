@@ -1,12 +1,38 @@
 import React from "react";
+import { useState } from "react";
 
-const About = () => {
+const project07 = () => {
+  const [displayValue, setDisplayValue] = useState<string>("0");
+
+  const generatePassword = (): string => {
+    const charset =
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+    const length = 16;
+    const array = new Uint32Array(length);
+    window.crypto.getRandomValues(array);
+
+    return Array.from(array)
+      .map((x) => charset[x % charset.length])
+      .join("");
+  };
+  const handleGenerate = () => {
+    setDisplayValue(generatePassword());
+  };
   return (
     <>
       <section className="projects">
         <div>
           <h1>Project 07</h1>
-          <p>Learn more about us here.</p>
+          <p>Generador de Contraseñas Aleatorias</p>
+        </div>
+      </section>
+      <section className="projects-password">
+        <input type="text" value={displayValue} readOnly />
+
+        <div className="divrow">
+          <div className="divrsp">
+            <button onClick={() => handleGenerate()}>Generate</button>
+          </div>
         </div>
       </section>
     </>
@@ -26,4 +52,4 @@ longitud debe ser mayor o igual a 4.
   );
 };
 
-export default About;
+export default project07;
