@@ -10,6 +10,9 @@ Crea una aplicación de lista de tareas.
 • Debe incluir un botón para limpiar todas las tareas completadas y actualizar el localStorag
 */
 const project09 = () => {
+  /* const [todos, setTodos] = useState(["Demo task Example"]);
+    const [newTodo, setNewTodo] = useState(""); */
+
   return (
     <>
       <section className="projects">
