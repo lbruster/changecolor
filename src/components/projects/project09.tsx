@@ -18,7 +18,7 @@ const project09 = () => {
       <section className="projects">
         <div>
           <h1>Project 09</h1>
-          <p>Lista de Tareas con LocalStorage</p>
+          <p>Lista de Tareas con LocalStorage algun dia</p>
         </div>
       </section>
     </>
