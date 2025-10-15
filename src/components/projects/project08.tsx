@@ -23,26 +23,6 @@ const project08 = () => {
   // Count characters (ignore spaces and line breaks)
   const charCount: number = text.replace(/\s+/g, "").length;
 
-  /* const [item, setItem] = useState([] as string[]);
-  const predefinedList = [""];
-
-  function handleType(event: React.ChangeEvent<HTMLInputElement>) {
-    const searchTerm = event.target.value.toLowerCase();
-    if (searchTerm !== "") {
-      const filteredItems = searchTerm.length;
-      /* setItem(filteredItems.toString); 
-      return filteredItems;
-    }
-  } */
-
-  /* function searchItem() {
-    const searchTerm = (item || []).toString().toLowerCase();
-    if (searchTerm !== "") {
-      console.log(item);
-      const testinginput = document.querySelector(".liveInput");
-      console.log(testinginput);
-    }
-  } */
   return (
     <>
       <section className="projects">
