@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 /*
 9. Lista de Tareas con LocalStorage
 Objetivo del ejercicio: Practicar persistencia de datos con localStorage.

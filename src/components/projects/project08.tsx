@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { ChangeEvent } from "react";
 /*
 8. Contador de Palabras y Caracteres
