@@ -56,7 +56,7 @@ const Home = () => {
         <button onClick={changeColor}>Change Just Logo Color</button>
         <p>Here use the buttons to change the logo background colors</p>
         <button onClick={changeBG}>Change BG Color</button> */}
-        <ul style={{ textAlign: "left", width: "600px", margin: "0 auto" }}>
+        <ul style={{ textAlign: "left", width: "55%", margin: "0 auto" }}>
           <li>
             {" "}
             <span style={{ fontWeight: 700 }}>Color Changer</span> – Experiment
