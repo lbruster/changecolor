@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 /* useEffect(() => {
     // Add the class when the component mounts
     document.body.classList.add("my-body-class");
