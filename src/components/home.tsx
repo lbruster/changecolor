@@ -56,7 +56,7 @@ const Home = () => {
         <button onClick={changeColor}>Change Just Logo Color</button>
         <p>Here use the buttons to change the logo background colors</p>
         <button onClick={changeBG}>Change BG Color</button> */}
-        <ul style={{ textAlign: "left" }}>
+        <ul style={{ textAlign: "left", width: "600px", margin: "0 auto" }}>
           <li>
             {" "}
             <span style={{ fontWeight: 700 }}>Color Changer</span> – Experiment
@@ -64,32 +64,49 @@ const Home = () => {
           </li>
           <li>
             {" "}
-            Click Counter – Track user interaction with real-time click
-            counting.
+            <span style={{ fontWeight: 700 }}>Click Counter</span> – Track user
+            interaction with real-time click counting.
           </li>
           <li>
             {" "}
-            Dynamic List – Learn to manipulate lists and DOM elements
-            dynamically.
-          </li>
-          <li> Live Search Filter – Filter items instantly as you type. </li>
-          <li>
-            {" "}
-            Simple Calculator – Practice form handling and arithmetic logic.
+            <span style={{ fontWeight: 700 }}>Dynamic List</span> – Learn to
+            manipulate lists and DOM elements dynamically.
           </li>
           <li>
             {" "}
-            Timer with Start, Pause, Reset – Control time-based activities
-            programmatically.
+            <span style={{ fontWeight: 700 }}>Live Search Filter</span> – Filter
+            items instantly as you type.{" "}
           </li>
           <li>
             {" "}
-            Random Password Generator – Create secure passwords on the fly.
+            <span style={{ fontWeight: 700 }}>Simple Calculator</span> –
+            Practice form handling and arithmetic logic.
           </li>
-          <li> Word and Character Counter – Analyze text input for counts.</li>
           <li>
             {" "}
-            To-Do List with LocalStorage – Save and manage tasks persistently.
+            <span style={{ fontWeight: 700 }}>
+              Timer with Start, Pause, Reset
+            </span>{" "}
+            – Control time-based activities programmatically.
+          </li>
+          <li>
+            {" "}
+            <span style={{ fontWeight: 700 }}>Random Password Generator</span> –
+            Create secure passwords on the fly.
+          </li>
+          <li>
+            {" "}
+            <span style={{ fontWeight: 700 }}>
+              Word and Character Counter
+            </span>{" "}
+            – Analyze text input for counts.
+          </li>
+          <li>
+            {" "}
+            <span style={{ fontWeight: 700 }}>
+              To-Do List with LocalStorage
+            </span>{" "}
+            – Save and manage tasks persistently.
           </li>
         </ul>
       </div>
