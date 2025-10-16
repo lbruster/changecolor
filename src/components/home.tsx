@@ -2,16 +2,16 @@ import React from "react";
 import { useState } from "react";
 //import reactLogo from "../assets/react.svg";
 
-const colors = ["red", "blue", "green", "yellow", "black", "white"];
+/* const colors = ["red", "blue", "green", "yellow", "black", "white"]; */
 
 const Home = () => {
-  const [color, setColor] = useState<string>("white");
-  const [count, setCount] = useState<number>(0);
+  /* const [color, setColor] = useState<string>("white");
+  const [count, setCount] = useState<number>(0); */
   const [bgcolor, setBG] = useState<string>("white");
 
   // avoid reading/modifying body style directly during render
 
-  const changeColor = () => {
+  /* const changeColor = () => {
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     setColor(randomColor);
   };
@@ -19,7 +19,7 @@ const Home = () => {
   const changeBG = () => {
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     setBG(randomColor);
-  };
+  }; */
 
   React.useEffect(() => {
     document.body.style.backgroundColor = bgcolor;
@@ -28,9 +28,9 @@ const Home = () => {
     };
   }, [bgcolor]);
 
-  const incrementar = () => {
+  /* const incrementar = () => {
     setCount(count + 1);
-  };
+  }; */
 
   return (
     <>
