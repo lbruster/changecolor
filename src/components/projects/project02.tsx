@@ -24,7 +24,7 @@ const Project02 = () => {
         <h1>Contador de Clicks</h1>
         <h2 className="conteo-clicks">{count}</h2>
         <div className="card">
-          <p>Here is the default counter</p>
+          <p>Here is the default counter test</p>
           <button onClick={incrementar}>Contar Clicks {count}</button>
         </div>
       </section>
